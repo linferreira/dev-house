@@ -6,13 +6,11 @@ class App {
   constructor() {
     this.server = express();
 
-    mongoose.connect(
-      "mongodb+srv://devhouse:devhouse@cluster0.blczvj4.mongodb.net/devhouse?retryWrites=true&w=majority",
-      {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      }
-    );
+    // Conectar ao banco de dados
+    mongoose.connect({
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
 
     this.middlewares();
     this.routes();
